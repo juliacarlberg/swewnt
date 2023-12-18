@@ -1,6 +1,7 @@
 const Player = require("../models/Player");
 
 exports.getAllPlayers = async (req, res) => {
+  console.log("handling request");
   try {
     const allPlayers = await Player.find();
     return res.json({ data: allPlayers });
@@ -11,6 +12,7 @@ exports.getAllPlayers = async (req, res) => {
 };
 
 exports.createPlayer = async (req, res) => {
+  console.log("handling request");
   try {
     const {
       firstname,
@@ -35,15 +37,11 @@ exports.createPlayer = async (req, res) => {
     });
 
     return res
-      .setHeader(
-        "Location",
-        `http://localhost:${process.env.PORT}/api/v1/players`
-      )
+      .set("Location", `http://localhost:${process.env.PORT}/api/v1/players`)
       .status(201)
       .json(newPlayer);
   } catch (error) {
-    console.log(error);
-
+    console.error(error);
     return res.sendStatus(500).json({ message: "Internal server error" });
   }
 };
