@@ -36,12 +36,16 @@ exports.createPlayer = async (req, res) => {
       club,
     });
 
-    return res
-      .set("Location", `http://localhost:${process.env.PORT}/api/v1/players`)
-      .status(201)
-      .json(newPlayer);
+    res.json({ message: "Player created successfully" });
   } catch (error) {
+    // Check if the error is a validation error
+    if (error.name === "ValidationError") {
+      // Send a 400 Bad Request response with details of validation errors
+      return res.status(400).json({ errors: error.errors });
+    }
+
+    // Handle other types of errors
     console.error(error);
-    return res.sendStatus(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };

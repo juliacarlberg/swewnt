@@ -6,7 +6,7 @@ import axios from "../../node_modules/axios/index";
 
 export async function createPlayer() {
   try {
-    const response = await axios.post("http://localhost:5173/api/v1/players/", {
+    const response = await axios.post("http://localhost:5002/api/v1/players/", {
       headers: {
         "Content-Type": "application/json",
       },
