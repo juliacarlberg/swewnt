@@ -1,29 +1,29 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { PlayerView } from "./components/PlayerView";
 import "./index.css";
 import { Home } from "./pages/Home";
-import { Players } from "./pages/Players";
-import { Shop } from "./pages/Shop";
+import { PlayerPage } from "./pages/PlayerPage";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    index: true,
   },
   {
     path: "/players",
-    element: <Players></Players>,
+    element: <PlayerPage></PlayerPage>,
   },
   {
-    path: "/eshop",
-    element: <Shop></Shop>,
+    path: "/players/:id",
+    element: <PlayerView></PlayerView>,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );

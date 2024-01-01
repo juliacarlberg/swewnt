@@ -1,9 +1,9 @@
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
 import seger from "../assets/ledsenseger.jpeg";
 import lagkram from "../assets/lagkram.avif";
 import { HomeArticle } from "../styled components/TextStyled";
 import { BigWrapper, SmallWrapper } from "../styled components/WrapperStyled";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
   return (
