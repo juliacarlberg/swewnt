@@ -49,3 +49,20 @@ exports.createPlayer = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+exports.getPlayerById = async (req, res) => {
+  try {
+    const playerId = req.params.playerId;
+
+    const player = await Player.findById(playerId);
+
+    if (!player) {
+      return res.status(404).json({ message: "Player not found" });
+    }
+
+    return res.json(player);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};

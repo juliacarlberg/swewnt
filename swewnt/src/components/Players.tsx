@@ -1,64 +1,74 @@
 // import { useEffect, useState } from "react";
 // import { getAllPlayers } from "../services/playerServices";
 // import { Player } from "../models/Player";
+// import { Link } from "react-router-dom";
+// import nathalie from "../assets/nathaliebjörn.jpg";
 
 // export const Players = () => {
 //   const [showPlayers, setShowPlayers] = useState<Player[]>([]);
 
 //   useEffect(() => {
 //     const getPlayers = async () => {
-//       const data = await getAllPlayers();
-//       setShowPlayers(data);
-//       console.log(data);
+//       try {
+//         const response = await getAllPlayers();
+//         const data = response.data || [];
+//         setShowPlayers(data);
+//         console.log("Fetched players:", data);
+//       } catch (error) {
+//         console.error("Error fetching players:", error);
+//       }
 //     };
 //     getPlayers();
 //   }, []);
 
+//   console.log("showPlayers before rendering:", showPlayers);
+
 //   return (
 //     <>
-//       {showPlayers.map((p) => (
-//         <div key={p.id}>
-//           <h2>{p.firstname}</h2>
-//         </div>
-//       ))}
+//       {showPlayers && showPlayers.length > 0 ? (
+//         showPlayers.map((p) => (
+//           <Link
+//             key={p.id}
+//             className="player_container"
+//             to={p.id ? p.id.toString() : ""}
+//           >
+//             <img
+//               src={nathalie}
+//               alt="Bild på fotbollsspelaren"
+//               className="playerImage"
+//             />
+//             {/* <img src={p.imageUrl} alt="Bild på fotbollsspelaren" /> */}
+//             <h2>
+//               {p.firstname} {p.lastname}
+//             </h2>
+//           </Link>
+//         ))
+//       ) : (
+//         <p>No players available.</p>
+//       )}
 //     </>
 //   );
 // };
 
-import { useEffect, useState } from "react";
-import { getAllPlayers } from "../services/playerServices";
-import { Player } from "../models/Player";
+import { Link, useLoaderData } from "react-router-dom";
+import { Loader } from "../loaders/playerLoader";
 
 export const Players = () => {
-  const [showPlayers, setShowPlayers] = useState<Player[]>([]);
+  const { players } = useLoaderData() as Loader;
 
-  useEffect(() => {
-    const getPlayers = async () => {
-      try {
-        const response = await getAllPlayers();
-        const data = response.data || []; // Assuming the property name is 'data'
-        setShowPlayers(data);
-        console.log("Fetched players:", data);
-      } catch (error) {
-        console.error("Error fetching players:", error);
-      }
-    };
-    getPlayers();
-  }, []);
+  let playersHtml: JSX.Element[] = [<></>];
 
-  console.log("showPlayers before rendering:", showPlayers);
+  playersHtml = players.map((p) => (
+    <Link key={p.id} className="player_container" to={p.id.toString()}>
+      <h2>
+        {p.firstname} {p.lastname}
+      </h2>
+    </Link>
+  ));
 
   return (
     <>
-      {showPlayers && showPlayers.length > 0 ? (
-        showPlayers.map((p) => (
-          <div key={p.id}>
-            <h2>{p.firstname}</h2>
-          </div>
-        ))
-      ) : (
-        <p>No players available.</p>
-      )}
+      <div id="container">{playersHtml}</div>
     </>
   );
 };

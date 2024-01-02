@@ -10,7 +10,3 @@ export interface Player {
   position: string;
   club: string;
 }
-
-export interface IApiResponse {
-  players: Player[];
-}

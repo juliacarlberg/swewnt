@@ -6,7 +6,7 @@ export const HomeArticle = styled.article`
   width: 30%;
   align-items: center;
   padding: 5%;
-  color: white;
+  color: #00436f;
   p {
     text-align: center;
     font-family: "Montserrat";
@@ -15,4 +15,18 @@ export const HomeArticle = styled.article`
     font-family: "Bebas Neue";
     font-size: 20pt;
   }
+`;
+
+export const HeadH2 = styled.h2`
+  text-align: center;
+  font-family: "Bebas Neue";
+  color: #00436f;
+  font-size: 25pt;
+`;
+
+export const HeadCart = styled.h2`
+  text-align: center;
+  font-family: "Bebas Neue";
+  color: white;
+  font-size: 20pt;
 `;

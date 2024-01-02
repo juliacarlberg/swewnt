@@ -4,14 +4,14 @@ const router = express.Router();
 const {
   createPlayer,
   getAllPlayers,
-  //   getPlayerById,
+  getPlayerById,
   //   updatePlayerById,
   //   deletePlayerById,
 } = require("../controllers/playerControllers");
 
 router.post("/", createPlayer);
 router.get("/", getAllPlayers);
-// router.get("/:playerId", getPlayerById);
+router.get("/:playerId", getPlayerById);
 // router.put("/:playerId", updatePlayerById);
 // router.delete("/:playerId", deletePlayerById);
 
