@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const playerRoutes = require("./src/routes/playerRoutes");
+const productRoutes = require("./src/routes/productRoutes");
+const cartRoutes = require("./src/routes/cartRoutes");
 
 const app = express();
 app.use(express.json());
@@ -23,11 +25,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/helloworld", (req, res) => {
-  return res.send("Hello world");
-});
-
 app.use("/api/v1/players", playerRoutes);
+app.use("/api/v1/products", productRoutes);
+app.use("/api/v1/carts", cartRoutes);
 
 const run = async () => {
   try {

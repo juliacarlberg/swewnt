@@ -1,27 +1,51 @@
 body {
   margin: 0;
   display: flex;
-  min-width: 320px;
-  max-width: 100vw;
-  min-height: 100vh;
+  box-sizing: border-box;
+  a {
+    text-decoration: none;
+  }
 }
 
-.segerimg {
-  width: 60%;
+* {
+  box-sizing: border-box;
 }
 
-.teamimg {
-  width: 60%;
+.lagbildpp {
+  width: 100%;
 }
 
-.player_container {
+.blackstenius_shop_image {
+  width: 521px;
+  height: 781px;
+  margin-right: 2%;
+}
+
+.shop_header {
+  width: 100%;
+}
+
+.player_image {
+  width: 200px;
+  height: 300px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.product_image {
+  width: 220px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.players_container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: white;
   background-color: #00436f;
   width: 200px;
+  height: 380px;
   margin: 1%;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -29,27 +53,297 @@ body {
     font-family: "Bebas Neue";
     font-weight: bolder;
     color: white;
+    text-align: center;
   }
-  .playerImage {
-    width: 200px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  p {
+    color: white;
+    font-family: "Montserrat";
+  }
+  article {
+    display: flex;
   }
 }
 
-.cart {
+.player_container {
+  display: flex;
   background-color: #00436f;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 3%;
+  height: 600px;
+  width: 900px;
+  article {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+  }
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  h2 {
+    color: #ffd401;
+    font-family: "Bebas Neue";
+    font-size: 30pt;
+    width: fit-content;
+  }
+
+  h3,
+  p {
+    color: white;
+    padding-left: 3%;
+    width: fit-content;
+  }
+
+  h3 {
+    font-family: "Bebas Neue";
+    font-size: 18pt;
+  }
+
+  p {
+    font-family: "Montserrat";
+  }
+
+  .detail_image {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 400px;
+    height: 600px;
+  }
+}
+
+.players_container:hover,
+.products_container:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.products_container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  right: 0;
-  top: 20%;
-  width: 350px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  align-items: center;
+  background-color: white;
+  background-color: #00436f;
+  width: 220px;
+  height: 400px;
+  margin: 1.5%;
+  border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  hr {
-    width: 200px;
-    border: 1px solid #ffd401;
+  h2 {
+    font-family: "Bebas Neue";
+    font-size: 17pt;
+    color: white;
+    text-align: center;
+    margin: 0%;
+    margin-top: 10px;
+  }
+  p {
+    color: white;
+    font-family: "Montserrat";
+    line-height: 0.1;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    padding: 10px;
+  }
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .product_price {
+    font-size: 18pt;
+  }
+}
+
+.product_container {
+  display: flex;
+  background-color: #00436f;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 3%;
+  height: 600px;
+  width: 900px;
+  article {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+  }
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  h2 {
+    color: #ffd401;
+    font-family: "Bebas Neue";
+    font-size: 30pt;
+    width: fit-content;
+  }
+
+  h3,
+  p {
+    color: white;
+    padding-left: 3%;
+    width: fit-content;
+  }
+
+  h3 {
+    font-family: "Bebas Neue";
+    font-size: 18pt;
+  }
+
+  p {
+    font-family: "Montserrat";
+  }
+
+  .detail_image {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 400px;
+    height: 600px;
+  }
+}
+
+.seger_div {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.product_in_cart_image {
+  width: 120px;
+  height: 150px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  background-color: white;
+  margin-bottom: 3px;
+  margin-top: 0;
+  height: 150px;
+  li {
+    display: flex;
+    color: #00436f;
+    h3 {
+      font-family: "Bebas Neue";
+      padding-top: 10px;
+    }
+    p {
+      font-family: "Montserrat";
+    }
+  }
+}
+
+.product_in_checkout {
+  section {
+    color: #00436f;
+  }
+  li {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    padding: 1%;
+    margin: 1%;
+    width: 400px;
+    border: 1px solid rgb(208, 208, 208);
+    h3 {
+      font-family: "Bebas Neue";
+    }
+    p {
+      font-family: "Montserrat";
+    }
+  }
+}
+
+.big_checkout_container {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
+  margin: 3%;
+  width: fit-content;
+  margin-bottom: 10%;
+  //border: 5px solid #00436f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #00436f;
+  background-color: rgb(240, 240, 240);
+  p,
+  label {
+    font-family: "Montserrat";
+  }
+  input {
+    //border: 1px solid #00436f;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 20px;
+    padding: 5%;
+  }
+}
+
+.delete_button {
+  background-color: white;
+  border: 1px solid #00436f;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #00436f;
+  margin: 20%;
+  cursor: pointer;
+  .fa-solid {
+    font-size: 18pt;
+  }
+}
+
+.quantity_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #00436f;
+  border-radius: 20px;
+  height: 40px;
+  width: 100px;
+  button {
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: #00436f;
+    font-size: 16pt;
+    font-family: "Montserrat";
+    cursor: pointer;
+  }
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

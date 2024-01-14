@@ -13,11 +13,13 @@ export const Header = () => {
   return (
     <>
       <HeaderStyled>
-        <img className="logo" src={logo} alt="SVFF logga" />
+        <Link to={"/"}>
+          <img className="logo" src={logo} alt="SVFF logga" />
+        </Link>
         <nav>
           <Link to={"/"}>Hem</Link>
           <Link to={"/players"}>Spelare</Link>
-          <Link to={"/eshop"}>Webbshop</Link>
+          <Link to={"/products"}>Webbshop</Link>
         </nav>
         <i className="fa-solid fa-basket-shopping" onClick={handleClick}></i>
         {showCart ? <Cart /> : null}

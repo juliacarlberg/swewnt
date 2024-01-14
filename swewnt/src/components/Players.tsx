@@ -52,6 +52,7 @@
 
 import { Link, useLoaderData } from "react-router-dom";
 import { Loader } from "../loaders/playerLoader";
+import { SmallWrapper } from "../styled components/WrapperStyled";
 
 export const Players = () => {
   const { players } = useLoaderData() as Loader;
@@ -59,16 +60,25 @@ export const Players = () => {
   let playersHtml: JSX.Element[] = [<></>];
 
   playersHtml = players.map((p) => (
-    <Link key={p.id} className="player_container" to={p.id.toString()}>
-      <h2>
-        {p.firstname} {p.lastname}
-      </h2>
+    <Link key={p._id} className="players_container" to={p._id.toString()}>
+      <img
+        src={p.imageUrl}
+        alt="Bild på fotbollspelare"
+        className="player_image"
+      />
+      <article>
+        <h2>
+          {p.firstname} {p.lastname}
+        </h2>
+      </article>
     </Link>
   ));
 
+  console.log(players);
+
   return (
     <>
-      <div id="container">{playersHtml}</div>
+      <SmallWrapper>{playersHtml}</SmallWrapper>
     </>
   );
 };

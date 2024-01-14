@@ -15,6 +15,7 @@ exports.createPlayer = async (req, res) => {
   console.log("handling request");
   try {
     const {
+      imageUrl,
       firstname,
       lastname,
       dateofbirth,
@@ -26,6 +27,7 @@ exports.createPlayer = async (req, res) => {
     } = req.body;
 
     const newPlayer = await Player.create({
+      imageUrl,
       firstname,
       lastname,
       dateofbirth,

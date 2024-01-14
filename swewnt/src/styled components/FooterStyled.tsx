@@ -7,7 +7,7 @@ export const FooterStyled = styled.footer`
   justify-content: space-around;
   .logo {
     width: 200px;
-    height: 120px;
+    height: 160px;
     padding-top: 3%;
   }
   article {
@@ -17,6 +17,7 @@ export const FooterStyled = styled.footer`
   h2 {
     font-size: 25px;
     font-family: "Bebas Neue";
+    width: fit-content;
   }
   p {
     font-size: 16px;

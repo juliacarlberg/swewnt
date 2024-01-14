@@ -8,15 +8,15 @@ export interface Loader {
 export const playerLoader = async () => {
   let players: Player[] = [];
 
-  // Attempt to retrieve players from localStorage
-  if (localStorage.getItem("players")) {
-    players = JSON.parse(localStorage.getItem("players") || "[]");
-  }
+  // // Attempt to retrieve players from localStorage
+  // if (localStorage.getItem("players")) {
+  //   players = JSON.parse(localStorage.getItem("players") || "[]");
+  // }
 
-  // If players are found in localStorage, return them
-  if (players.length > 0) {
-    return { players };
-  }
+  // // If players are found in localStorage, return them
+  // if (players.length > 0) {
+  //   return { players };
+  // }
 
   // If players are not found in localStorage, make an API request
   try {
