@@ -8,6 +8,7 @@ const CartSchema = new mongoose.Schema({
     {
       name: {
         type: String,
+
         minlength: 2,
       },
       productPrice: {
